@@ -1,22 +1,23 @@
 package com.mps.app.version3.Commands;
 
-import com.mps.app.version3.appliances.KitchenLights;
+import com.mps.app.version3.appliances.AbstractAppliance;
 
 /**
  * / Created by Mike Schwingenschloegl in Jun 2021
  */
 public class LightOffCommand implements Command {
 
-    KitchenLights lights;
+    AbstractAppliance lights;
 
-    public LightOffCommand(KitchenLights lights) {
+    public LightOffCommand(AbstractAppliance lights) {
 
         this.lights = lights;
     }
 
     @Override
-    public void execute() {
+    public void execute(AbstractAppliance appliance) {
 
-        lights.off();
+        lights.off(appliance);
     }
+
 }
